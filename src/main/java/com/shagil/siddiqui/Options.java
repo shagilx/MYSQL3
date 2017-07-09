@@ -33,9 +33,9 @@ public class Options {
         this.optionId = optionId;
     }
 
-    public Integer getQid() {
-        return qid;
-    }
+//    public Integer getQid() {
+//        return qid;
+//    }
 
     public void setQid(Integer qid) {
         this.qid = qid;
