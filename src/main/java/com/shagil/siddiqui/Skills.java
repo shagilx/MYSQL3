@@ -3,6 +3,7 @@ package com.shagil.siddiqui;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -12,15 +13,25 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "skills_table")
-public class Skills {
+public class Skills implements Serializable{
     @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     @Column(name = "skilltext")
     private String skill;
 
-    @OneToMany(mappedBy = "skills",cascade = CascadeType.ALL)
-    private Set<Question> question;
-
     public Skills() {}
+
+    public Skills(String skill) {
+        this.skill = skill;
+    }
+
+
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getSkill() {
         return skill;
@@ -30,11 +41,4 @@ public class Skills {
         this.skill = skill;
     }
 
-    public Set<Question> getQuestionList() {
-        return question;
-    }
-
-    public void setQuestionList(Set<Question> questionList) {
-        this.question = questionList;
-    }
 }

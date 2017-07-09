@@ -23,4 +23,6 @@ public class QuestionController {
     public @ResponseBody Iterable<Question>getAllQuestions(){
         return questionRepository.findAll();
     }
+
+
 }

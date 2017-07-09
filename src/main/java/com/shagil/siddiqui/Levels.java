@@ -1,6 +1,7 @@
 package com.shagil.siddiqui;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -8,15 +9,23 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "levels_table")
-public class Levels {
+public class Levels implements Serializable{
     @Id
-    @Column(name = "leveltext")
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @Column(name = "leveltext",nullable = false)
     private String level;
 
-    @OneToMany(mappedBy = "levels",cascade = CascadeType.ALL)
-    private Set<Question> questionList;
-
     public Levels() {}
+
+    public Levels(String level) {
+        this.level = level;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getLevel() {
         return level;
@@ -24,13 +33,5 @@ public class Levels {
 
     public void setLevel(String level) {
         this.level = level;
-    }
-
-    public Set<Question> getQuestionList() {
-        return questionList;
-    }
-
-    public void setQuestionList(Set<Question> questionList) {
-        this.questionList = questionList;
     }
 }
