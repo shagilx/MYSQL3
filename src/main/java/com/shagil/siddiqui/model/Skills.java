@@ -1,4 +1,4 @@
-package com.shagil.siddiqui;
+package com.shagil.siddiqui.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 

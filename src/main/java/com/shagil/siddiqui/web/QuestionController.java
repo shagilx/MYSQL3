@@ -1,6 +1,10 @@
-package com.shagil.siddiqui;
+package com.shagil.siddiqui.web;
 
+import com.shagil.siddiqui.Repository.QuestionRepository;
+import com.shagil.siddiqui.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +27,7 @@ public class QuestionController {
     public @ResponseBody Iterable<Question>getAllQuestions(){
         return questionRepository.findAll();
     }
+
 
 
 }

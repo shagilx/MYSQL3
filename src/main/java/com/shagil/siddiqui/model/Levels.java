@@ -1,4 +1,4 @@
-package com.shagil.siddiqui;
+package com.shagil.siddiqui.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

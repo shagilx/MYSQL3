@@ -1,6 +1,6 @@
-package com.shagil.siddiqui;
+package com.shagil.siddiqui.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.shagil.siddiqui.model.Skills;
 import org.springframework.data.repository.CrudRepository;
 
 /**

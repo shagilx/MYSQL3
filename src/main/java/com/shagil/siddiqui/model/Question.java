@@ -1,6 +1,4 @@
-package com.shagil.siddiqui;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+package com.shagil.siddiqui.model;
 
 import javax.persistence.*;
 import java.sql.Blob;
@@ -90,4 +88,8 @@ public class Question {
         this.levels = levels;
     }
 
+    @Override
+    public String toString() {
+        return questionText;
+    }
 }
