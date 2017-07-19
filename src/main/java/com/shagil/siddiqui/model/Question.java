@@ -15,44 +15,44 @@ public class Question {
     @Column(name = "qid",nullable = false)
     private Integer qid;
     @Column(name = "image")
-    private Blob image;
+    private String image;
     @Column(name = "text",nullable = false)
     private String questionText;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "skill_text",nullable = false,referencedColumnName = "skilltext")
-    Skills skills;
-
+    Skill skill;
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "level_text",nullable = false,referencedColumnName = "leveltext")
-    Levels levels;
+    Level level;
 
     @OneToMany(mappedBy = "qid",cascade = CascadeType.ALL)
-    private Set<Options> optionsSet;
+    private Set<Option> optionSet;
 
     public Question(){}
 
 
-    public Question(Blob image, String questionText, Skills skills, Levels levels) {
+    public Question(String image, String questionText, Skill skills, Level levels) {
         this.image = image;
         this.questionText = questionText;
-        this.skills = skills;
-        this.levels = levels;
+        this.skill = skills;
+        this.level = levels;
     }
 
-    public Set<Options> getOptionsSet() {
-        return optionsSet;
+    public Set<Option> getOptionSet() {
+        return optionSet;
     }
 
-    public void setOptionsSet(Set<Options> optionsSet) {
-        this.optionsSet = optionsSet;
+    public void setOptionSet(Set<Option> optionSet) {
+        this.optionSet = optionSet;
     }
 
-    public Blob getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -72,20 +72,20 @@ public class Question {
         this.questionText = questionText;
     }
 
-    public Skills getSkills() {
-        return skills;
+    public Skill getSkill() {
+        return skill;
     }
 
-    public void setSkills(Skills skills) {
-        this.skills = skills;
+    public void setSkill(Skill skill) {
+        this.skill = skill;
     }
 //
-    public Levels getLevels() {
-        return levels;
+    public Level getLevel() {
+        return level;
     }
 
-    public void setLevels(Levels levels) {
-        this.levels = levels;
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     @Override

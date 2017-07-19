@@ -1,11 +1,13 @@
 package com.shagil.siddiqui.Repository;
 
-import com.shagil.siddiqui.model.Level;
+import com.shagil.siddiqui.model.Response;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by gauravgarg on 7/7/17.
+ * Created by gauravgarg on 18/7/17.
  */
 @Repository
-public interface LevelsRepository extends CrudRepository<Level,String> {}
+public interface ResponseRepository extends CrudRepository<Response,Integer>{
+
+}

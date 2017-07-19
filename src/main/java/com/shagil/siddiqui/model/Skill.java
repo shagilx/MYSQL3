@@ -13,17 +13,17 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "skills_table")
-public class Skills implements Serializable{
+public class Skill implements Serializable{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "skilltext")
+    @Column(name = "skilltext",unique = true)
     private String skill;
 
-    public Skills() {}
+    public Skill() {}
 
-    public Skills(String skill) {
+    public Skill(String skill) {
         this.skill = skill;
     }
 
@@ -32,6 +32,10 @@ public class Skills implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
+
+//    public Integer getId() {
+//        return id;
+//    }
 
     public String getSkill() {
         return skill;

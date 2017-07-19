@@ -9,7 +9,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "levels_table")
-public class Levels implements Serializable{
+public class Level implements Serializable{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,11 +17,15 @@ public class Levels implements Serializable{
     @Column(name = "leveltext",nullable = false)
     private String level;
 
-    public Levels() {}
+    public Level() {}
 
-    public Levels(String level) {
+    public Level(String level) {
         this.level = level;
     }
+
+//    public Integer getId() {
+//        return id;
+//    }
 
     public void setId(Integer id) {
         this.id = id;

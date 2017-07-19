@@ -1,13 +1,14 @@
 package com.shagil.siddiqui.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by shagil on 9/7/17.
  */
 @Entity
 @Table(name = "options_table")
-public class Options {
+public class Option implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "option_id")
@@ -19,10 +20,10 @@ public class Options {
     @Column(name = "is_correct")
     private boolean isCorrect;
 
-    public Options() {
+    public Option() {
     }
 
-    public Options(Integer qid, String optionText, boolean isCorrect) {
+    public Option(Integer qid, String optionText, boolean isCorrect) {
         this.qid = qid;
         this.optionText = optionText;
         this.isCorrect = isCorrect;
@@ -33,9 +34,9 @@ public class Options {
         this.optionId = optionId;
     }
 
-//    public Integer getQid() {
-//        return qid;
-//    }
+    public Integer getQid() {
+        return qid;
+    }
 
     public void setQid(Integer qid) {
         this.qid = qid;
