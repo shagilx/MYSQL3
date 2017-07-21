@@ -13,7 +13,7 @@ public class Option implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "option_id")
     private Integer optionId;
-    @Column(name = "qid")
+    @Column(name = "qid",nullable = false)
     private Integer qid;
     @Column(name = "option_text",nullable = false)
     private String optionText;

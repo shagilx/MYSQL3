@@ -20,14 +20,10 @@ public class SkillsColtroller {
     static final Logger logger = LoggerFactory.getLogger(SkillsColtroller.class.getName());
     @Autowired
     private SkillsRepository skillsRepository;
-    @Autowired
-    private QuestionRepository questionRepository;
     @GetMapping(path = "/all")
     @CrossOrigin(origins = "http://127.0.0.1:8887")
     public @ResponseBody Iterable<Skill> getAllSkills(){
         return skillsRepository.findAll();
     }
-
-
 
 }

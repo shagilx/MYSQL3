@@ -34,7 +34,6 @@ public class QuestionController {
         return questionRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:8887")
     @GetMapping("/get-by-skill")
     @ResponseBody
     public List<Question> getBySkillAndLevel(String skill,  String level){
@@ -46,10 +45,10 @@ public class QuestionController {
         }
         return null;
     }
-    @CrossOrigin(origins = "http://127.0.0.1:8887")
+
     @GetMapping("/skills")
     @ResponseBody
-    public List<Level> getBySkills(String skill){
+    public List<Level> getBySkills(@RequestParam("skill") String skill){
         try{
             List<Level> questionList=questionRepository.findDistinctBySkill(skill);
             return questionList;
@@ -58,38 +57,4 @@ public class QuestionController {
         }
         return null;
     }
-//        @GetMapping("/q")
-//        @CrossOrigin(origins = "http://127.0.0.1:8887")
-//        public @ResponseBody
-//        List<Question> getSkills(String skill){
-//            try {
-//                List<Question> skillList=questionRepository.findDistinctBySkill(skill);
-//                return skillList;
-//            }catch (Exception e){
-//                logger.error(e.getMessage());
-//            }
-//            return null;
-//
-//        }
-
-
-//    @GetMapping("/get-by-skill")
-//    @ResponseBody
-//    public List<Question> getBySkillAndLevel(@Param("skill") ArrayList<String> skills){
-//        List<Question> questionList;
-//        try{
-//            questionList=questionRepository.findAllBySkillIn(skills);
-//            System.out.println("questionList" + questionList.toArray().toString());
-//            return questionList;
-//
-//        }catch (Exception e){
-//            //return new String[]{"No questions"};
-//            //logger
-//            //return error code
-//            return null;
-//        }
-//       // return questionList.toArray();
-//
-//    }
-
 }
