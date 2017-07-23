@@ -1,10 +1,12 @@
 package com.shagil.siddiqui.Repository;
 
-import com.shagil.siddiqui.model.Options;
+import com.shagil.siddiqui.model.Option;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by shagil on 9/7/17.
  */
-public interface OptionsRepository extends CrudRepository<Options,Integer>{
+@Repository
+public interface OptionsRepository extends CrudRepository<Option,Integer>{
 }

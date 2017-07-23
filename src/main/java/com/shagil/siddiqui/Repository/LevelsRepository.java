@@ -1,13 +1,11 @@
 package com.shagil.siddiqui.Repository;
 
-import com.shagil.siddiqui.model.Levels;
-import org.springframework.data.jpa.repository.Query;
+import com.shagil.siddiqui.model.Level;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
-
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by gauravgarg on 7/7/17.
  */
-public interface LevelsRepository extends CrudRepository<Levels,String> {}
+@Repository
+public interface LevelsRepository extends CrudRepository<Level,String> {}
